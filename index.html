@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Vídeos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        #video-container {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        #video-list {
+            flex: 1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 10px;
+            background: #f0f0f0;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video-container">
+        <video id="video-player" width="100%" controls>
+            <source src="video1.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+    <div id="video-list">
+        <ul>
+            <li onclick="changeVideo('video1.mp4')">Vídeo 1</li>
+            <li onclick="changeVideo('video2.mp4')">Vídeo 2</li>
+            <li onclick="changeVideo('video3.mp4')">Vídeo 3</li>
+        </ul>
+    </div>
+
+    <script>
+        function changeVideo(videoSrc) {
+            document.getElementById('video-player').src = videoSrc;
+        }
+    </script>
+</body>
+
+</html>
